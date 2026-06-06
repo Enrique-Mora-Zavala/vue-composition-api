@@ -80,11 +80,60 @@
                     <input v-model="editarLibro.disponibilidad" type="text" required placeholder="disponibilidad">
                 </div>
             </div>
-            <button type="submit">Guardar cambios</button>
+            <button class="btn enviar" type="submit">Guardar cambios</button>
         </form>
     </main>
 </template>
 
-<style>
+<style scoped>
+    form {
+        width: 90%;
+        margin: 25px auto;
+        padding: 20px;
+        border: solid 1px #000;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
 
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        font-size: 1rem;
+    }
+
+    input {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #000;
+        margin-bottom: 15px;
+        font-family: "Wix Madefor Text", sans-serif;
+        font-size: 1rem;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .btn {
+        background-color: transparent;
+        border: none;
+        padding: 10px 15px;
+        text-decoration: none;
+        font-family: "Wix Madefor Text", sans-serif;
+        color: #000;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease in-out;
+        width: 100%;
+    }
+
+    .enviar {
+        background-color: green;
+        color: #fff;
+    }
+
+    .enviar:hover {
+        background-color: rgb(1, 98, 1);
+    }
 </style>

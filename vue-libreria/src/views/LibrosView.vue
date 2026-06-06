@@ -67,9 +67,8 @@ export default {
                     <td>{{ libro.genero }}</td>
                     <td class="alinear">{{ libro.precio }}</td>
                     <td>{{ libro.disponibilidad }}</td>
-                    <td>{{ libro.acciones }}</td>
                     <td class="botones">
-                        <button class="btn eliminar "@click="eliminarLibro(libro.id,libro.titulo)">
+                        <button class="btn eliminar" @click="eliminarLibro(libro.id,libro.titulo)">
                             Eliminar
                         </button>
                         <RouterLink class="btn editar" :to="{ path:'editarLibro/' + libro.id }">
@@ -105,7 +104,8 @@ export default {
     .botones {
         display: flex;
         justify-content: space-around;
-        border: solid 1px #9a9a9a;
+        align-items: center;
+        border: 1px solid #a09d9d;
     }
 
     .btn {
