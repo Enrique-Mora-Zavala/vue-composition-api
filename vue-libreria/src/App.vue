@@ -30,7 +30,8 @@ import { RouterLink, RouterView } from 'vue-router'
     padding: 10px;
     font-weight: 700;
     font-size: 1.3rem;
-    color: #181818;
+    color: #353535;
+    transition: color 0.3s ease in-out;
   }
 
   .link--navbar:hover {
