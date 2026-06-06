@@ -2,7 +2,19 @@
   "libros": [
     { "id": 1,
       "titulo": "Primer libro",
-      "autor": "JuanDavid_Dev" 
+      "autor": "JuanDavid_Dev",
+      "ISBN": "123456789",
+      "genero": "Ficción",
+      "precio": "1 USD",
+      "disponibilidad": true
+    },
+    { "id": 2,
+      "titulo": "Segundo libro",
+      "autor": "JuanDavid_Dev",
+      "ISBN": "123456789",
+      "genero": "Ficción",
+      "precio": "2 USD",
+      "disponibilidad": true
     }
   ]
 }
