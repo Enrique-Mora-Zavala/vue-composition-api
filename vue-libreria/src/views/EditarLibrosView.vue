@@ -6,7 +6,7 @@
     export default {
         setup() {
             const router = useRouter();
-
+            const libroId = useRoute().params.id;
             const editarLibro = ref({
                 titulo: '',
                 autor: '',
@@ -17,7 +17,6 @@
             });
 
             const cargarLibro = async () => {
-                const libroId = useRoute().params.id;
                 try {
                     const response = await axios.get(`http://localhost:3000/libros/${libroId}`);
                     editarLibro.value = response.data;
@@ -29,9 +28,11 @@
             const actualizarLibro = async () => {
                 try {
                     await axios.put(`http://localhost:3000/libros/${libroId}`, editarLibro.value);
+
                     setTimeout(() => {
                         alert('Libro editado con éxito');
-                    }, 500);
+                    }, 200);
+
                     router.push('/');
                 } catch (error) {
                     console.log('Error al editar el libro', error);
