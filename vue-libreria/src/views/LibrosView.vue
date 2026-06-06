@@ -4,10 +4,6 @@ import {ref, onMounted} from 'vue';
 
 export default {
     setup() {
-        onMounted(() => {
-            listarLibros();
-        });
-
         const libros = ref([]);
 
         const listarLibros = async()=>{
@@ -20,8 +16,27 @@ export default {
             }
         };
 
+        const eliminarLibro = async (id, titulo) => {
+            const confirmDelete = window.confirm(`¿Estás seguro de que deseas eliminar el libro "${titulo}"?`);
+            if (confirmDelete) {
+                try {
+                    await axios.delete(`http://localhost:3000/libros/${id}`);
+                    listarLibros();
+                } catch (error) {
+                    console.log(`Error al eliminar el libro "${titulo}"`, error);
+                }
+            }
+            
+        };
+
+        onMounted(() => {
+            listarLibros();
+        });
+
         return {
             libros,
+            listarLibros,
+            eliminarLibro
         };
     }
 }
@@ -53,7 +68,7 @@ export default {
                     <td>{{ libro.disponibilidad }}</td>
                     <td>{{ libro.acciones }}</td>
                     <div>
-                        <button @click="">
+                        <button @click="eliminarLibro(libro.id,libro.titulo)">
                             Eliminar
                         </button>
                     </div>
