@@ -21,6 +21,7 @@ export default {
             if (confirmDelete) {
                 try {
                     await axios.delete(`http://localhost:3000/libros/${id}`);
+                    // Actualiza la lista de libros después de eliminar el libro escogido
                     listarLibros();
                 } catch (error) {
                     console.log(`Error al eliminar el libro "${titulo}"`, error);
