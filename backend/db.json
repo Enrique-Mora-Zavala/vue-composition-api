@@ -1,6 +1,7 @@
 {
   "libros": [
-    { "id": 1,
+    {
+      "id": 1,
       "titulo": "Primer libro",
       "autor": "JuanDavid_Dev",
       "ISBN": "123456789",
@@ -8,7 +9,8 @@
       "precio": "1 USD",
       "disponibilidad": true
     },
-    { "id": 2,
+    {
+      "id": 2,
       "titulo": "Segundo libro",
       "autor": "JuanDavid_Dev",
       "ISBN": "123456789",
