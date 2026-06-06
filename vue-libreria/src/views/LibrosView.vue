@@ -68,11 +68,14 @@ export default {
                     <td>{{ libro.precio }}</td>
                     <td>{{ libro.disponibilidad }}</td>
                     <td>{{ libro.acciones }}</td>
-                    <div>
+                    <td>
                         <button @click="eliminarLibro(libro.id,libro.titulo)">
                             Eliminar
                         </button>
-                    </div>
+                        <RouterLink :to="{ path:'editarLibro/' + libro.id }">
+                            Editar
+                        </RouterLink>
+                    </td>
                 </tr>
             </tbody>
         </table>
